@@ -4,5 +4,10 @@
       <img src="http://www.myiconfinder.com/uploads/iconsets/256-256-87cc0576629f9e533cd1d331fd98d8bc.png" width="30" height="30" class="d-inline-block align-top" alt="">
       Auth App
     </a>
+    <%= if AuthAppWeb.Services.Guardian.Plug.current_resource(@conn) do %>
+      <span class="navbar-text">
+        <%= link "Logout", to: Routes.page_path(@conn, :logout) %>
+      </span>
+    <% end %>
   </nav>
 </header>
