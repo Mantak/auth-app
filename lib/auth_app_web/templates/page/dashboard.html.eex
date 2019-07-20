@@ -1,0 +1,19 @@
+<h1>Hello!</h1>
+<hr />
+
+<p class="lead">
+  This app is an example of authentication application with Elixir Phoenix
+  using Guardian Package.
+</p>
+
+<h3>Documentation</h3>
+<ul>
+  <li><a href="https://phoenixframework.org/">Phoenix</a></li>
+  <li><a href="https://elixir-lang.org/">Elixir</a></li>
+  <li><a href="https://github.com/ueberauth/guardian">Guardian</a></li>
+</ul>
+<hr />
+<blockquote class="blockquote">
+  <p class="mb-0"><%= @quote["quote"] %></p>
+  <footer class="blockquote-footer"><%= @quote["character"] %></footer>
+</blockquote>
