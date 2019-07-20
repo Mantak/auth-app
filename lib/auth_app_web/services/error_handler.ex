@@ -1,5 +1,7 @@
 defmodule AuthAppWeb.Services.ErrorHandler do
   import Plug.Conn
+  import Phoenix.Controller
+  alias AuthAppWeb.Router.Helpers, as: Routes
 
   @behaviour Guardian.Plug.ErrorHandler
 
@@ -8,6 +10,6 @@ defmodule AuthAppWeb.Services.ErrorHandler do
     body = to_string(type)
     conn
     |> put_resp_content_type("text/plain")
-    |> send_resp(401, body)
+    |> redirect(to: Routes.page_path(conn, :index))
   end
 end
