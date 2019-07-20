@@ -1,0 +1,8 @@
+<header>
+  <nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+      <img src="http://www.myiconfinder.com/uploads/iconsets/256-256-87cc0576629f9e533cd1d331fd98d8bc.png" width="30" height="30" class="d-inline-block align-top" alt="">
+      Auth App
+    </a>
+  </nav>
+</header>
