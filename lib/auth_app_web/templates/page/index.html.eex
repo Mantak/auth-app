@@ -5,17 +5,20 @@
         <h3>Authenticate</h3>
       </div>
       <div class="card-body">
-        <form>
+        <%= if get_flash(@conn, :error) do %>
+          <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
+        <% end %>
+        <%= form_for @changeset, Routes.page_path(@conn, :authenticate), fn f -> %>
           <div class="form-group">
-            <input type="email" class="form-control" placeholder="Email Address">
+            <%= text_input f, :email, class: "form-control", placeholder: "Email Address"%>
           </div>
 
           <div class="form-group">
-            <input type="password" class="form-control" placeholder="Password">
+            <%= password_input f, :password, class: "form-control", placeholder: "Password"%>
           </div>
 
-          <button type="button" class="btn btn-primary btn-block">Login</button>
-        </form>
+          <%= submit "Login", class: "btn btn-primary btn-block"%>
+        <% end %>
       </div>
     </div>
   </div>
