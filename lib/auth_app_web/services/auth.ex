@@ -3,7 +3,7 @@ defmodule AuthAppWeb.Services.Auth do
   alias AuthApp.Accounts
 
   def verify_account(email, password) do
-    case Accounts.get_user(:email, email) do
+    case Accounts.get_user_by_email(email) do
       nil ->
         {:error, :invalid_credentials}
       user ->
