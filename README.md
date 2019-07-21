@@ -1,20 +1,25 @@
 # AuthApp
 
-To start your Phoenix server:
+## Documentation
 
-  * Install dependencies with `mix deps.get`
-  * Create and migrate your database with `mix ecto.setup`
-  * Install Node.js dependencies with `cd assets && npm install`
-  * Start Phoenix endpoint with `mix phx.server`
+This is an example of application with authentication in Phoenix framework using Guardina package.
 
-Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
+## Requirements
 
-Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
+* Elixi (current version 1.6.6)
+* Phoenix Framework (current version 1.4)
+* PostgreSQL
 
-## Learn more
+## Getting Started
 
-  * Official website: http://www.phoenixframework.org/
-  * Guides: https://hexdocs.pm/phoenix/overview.html
-  * Docs: https://hexdocs.pm/phoenix
-  * Mailing list: http://groups.google.com/group/phoenix-talk
-  * Source: https://github.com/phoenixframework/phoenix
+After cloning, first install dependencies:
+
+`mix deps.get`
+
+Change database configuration in `dev.exs` inside config directory and run migration:
+
+`mix ecto.migrate`
+
+Start the app by running:
+
+`mix phx.server`
