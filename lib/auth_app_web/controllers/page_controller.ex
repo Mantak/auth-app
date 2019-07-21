@@ -1,6 +1,7 @@
 defmodule AuthAppWeb.PageController do
   use AuthAppWeb, :controller
   alias AuthAppWeb.Services.{Auth, Guardian}
+  alias AuthApp.Accounts
   alias AuthApp.Accounts.User
 
   def index(conn, _params) do
@@ -9,6 +10,20 @@ defmodule AuthAppWeb.PageController do
     else
       changeset = User.changeset(%User{}, %{})
       render(conn, "index.html", changeset: changeset)
+    end
+  end
+
+  def registration(conn, _) do
+    changeset = User.changeset(%User{}, %{})
+    render(conn, "registration.html", changeset: changeset)
+  end
+
+  def register(conn, %{"user" => user}) do
+    case Accounts.create_user(user) do
+      {:ok, user} ->
+        redirect(conn, to: Routes.page_path(conn, :index))
+      {:error, changeset} ->
+        render(conn, "registration.html", changeset: changeset)
     end
   end
 
