@@ -25,6 +25,8 @@ defmodule AuthAppWeb.Router do
     pipe_through [:browser, :auth]
 
     get "/", PageController, :index
+    get "/registration", PageController, :registration
+    post "/register", PageController, :register
     post "/authenticate", PageController, :authenticate
   end
 
