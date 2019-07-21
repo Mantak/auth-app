@@ -1,6 +1,6 @@
 <header>
   <nav class="navbar navbar-light bg-light">
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" href="<%= Routes.page_path(@conn, :index) %>">
       <img src="http://www.myiconfinder.com/uploads/iconsets/256-256-87cc0576629f9e533cd1d331fd98d8bc.png" width="30" height="30" class="d-inline-block align-top" alt="">
       Auth App
     </a>
